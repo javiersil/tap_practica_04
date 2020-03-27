@@ -6,6 +6,7 @@
 package com_grafico;
 
 import java.awt.Color;
+import java.awt.Graphics;
 import java.io.Serializable;
 import javax.swing.JComponent;
 import javax.swing.JLabel;
@@ -73,6 +74,26 @@ public class Grafico extends JComponent implements Serializable{
         }
         this.iniciarElementos();
     }
+
+    public void setValores(int[] vals) {
+        this.vals = vals;
+    }
     
+    public void paintComponent(Graphics f){
+
+int i;
+int j=1;
+int ancho= this.getWidth();
+int alto =  this.getHeight();
+//this.titulo;
+int separa = (int)(this.getWidth()/this.nfiguras + 0.10);
+int anchoB = (int)(this.getWidth() / this.nfiguras - separa);
+
+for(i = 0; i < this.nfiguras ; i++){
+    f.setColor(color[i]);
+    this.etis[i].setBounds(separa+i*(ancho+separa)+(ancho/2),(alto-20*this.colorB.length)-(this.vals[i]*5-this.etis[i].getWidth()-2),30, 20);
+}
+
+}
     
 }
