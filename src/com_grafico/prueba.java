@@ -5,22 +5,29 @@
  */
 package com_grafico;
 
-import javax.swing.JComponent;
-
 /**
  *
  * @author bere
  */
+import com_grafico.Grafico;
+
 public class prueba extends javax.swing.JFrame {
-       JComponent p= new Grafico();
+      
+       String[] elementosP= {"elemento1","elemento2","elemento3"};
+        int[] num= {10,20,30};
         
+    Grafico p= new Grafico("Elementos de prueba",elementosP);
+       
+       
         
     /**
      * Creates new form prueba
      */
     public prueba() {
         initComponents();
-        p.setSize(400,300);
+        this.
+        p.setVals(num);
+        p.setSize(this.getWidth(),this.getHeight());
         p.setVisible(true);
         this.add(p);
         

@@ -39,6 +39,7 @@ public class Grafico extends JComponent implements Serializable{
         colorB = new JLabel[0];
         this.tLeyenda =  new String[0];  
         nfiguras= vals.length;
+        this.setVals(vals);
     }
 
     public Grafico(String tTitulo, String[] tLeyenda) {
@@ -103,7 +104,6 @@ public class Grafico extends JComponent implements Serializable{
     }
     
     public void setLeyendas(String tLeyenda[]){
-
         leyendaBarra = new JLabel[nfiguras];
         
         for(int i = 0; i < tLeyenda.length; i++){
@@ -162,8 +162,8 @@ public void paintComponent(Graphics f){
         int[] num= {10,20,30};
         JFrame frame = new JFrame("Prueba");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JComponent p= new Grafico("Elementos de prueba",elementosP);
-        
+        Grafico p= new Grafico("elementos", elementosP);
+        p.setVals(num);
         p.setSize(400, 300);
         p.setVisible(true);
         frame.add(p);      
